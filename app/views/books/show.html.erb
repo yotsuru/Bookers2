@@ -1,6 +1,11 @@
 <h1>Book detail</h1>
 
+<p><%= image_tag 'sample-author1.jpg' %></p>
+<p><%= @book.user.name %></p>
+
 <p><%= @book.title %></p>
-
-
 <p><%= @book.opinion %></p>
+
+<% if @book.user == current_user %>
+  <%= link_to "Destroy", book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？" %>
+<% end %>
