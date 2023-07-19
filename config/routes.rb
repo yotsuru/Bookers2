@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   #post 'books' => 'books#create'
   root to: "homes#top"
   get 'homes/about' => 'homes#about', as: "about"
+  patch 'books/:id' => 'books#update', as: 'update_book'
+  delete 'books/:id' => 'books#destroy', as: 'destroy_book'
 end
