@@ -11,11 +11,9 @@
 
 <% @books.each do |book| %>
 <div>
-  <%= link_to book_path(book.id) do %>
-    <%= image_tag book.get_image %>
-  <% end %>
-  <p><%= image_tag book.user.get_profile_image(100,100) %></p>
-  <p>Title：<%= book.title %></p>
+  <p><%= image_tag book.user.get_profile_image(100,100)%></p>
+  <p>Title</p><p><%= link_to book.title,book_path(book.id) %></p>
   <p>Opinion：<%= book.opinion %></p>
   
-<% end %>
+ <% end %>
+</div>
