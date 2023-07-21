@@ -14,17 +14,12 @@
   <body>
     <header>
     <% if user_signed_in? %>
-    <div>
-      <%= flash[:notice] %>
-    </div>
       <li>
-        <%= link_to "Home", destroy_user_session_path, method: :delete %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete %>
       </li>
+   
     <% else %>
-    <div>
-      <%= flash[:notice] %>
-    </div>
-      <li>
+    　<li>
         <%= link_to "Sign up", new_user_registration_path %>
       </li>
       <li>
@@ -33,5 +28,8 @@
     <% end %>
   </header>
     <%= yield %>
+    <div>
+      <%= flash[:notice] %>
+    </div>
   </body>
 </html>
