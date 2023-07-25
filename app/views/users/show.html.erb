@@ -4,23 +4,23 @@
 
 <%= render 'books/userinfo' ,book: @book, user: @user %><!--ローカル変数が２つ-->
 <%#= render 'books/booknew' , book: @book %>
-<!-- ユーザーの詳細 -->
-<div>
-  <h3><%= @user.name %></h3>
-  <%= image_tag @user.get_profile_image(100,100) %>
-  <% if @user == current_user %>
-     <%#= link_to "プロフィール編集", edit_user_path(@user) %>
-    <%= link_to edit_user_path(@user) do %><i class="fa-solid fa-user-gear"></i><% end %>
-  <% end %>
-</div>
 
 <!-- ユーザーの投稿一覧 -->
-
-<% @books.each do |book| %>
-<div>
-  <p><%= image_tag book.user.get_profile_image(100,100)%></p>
-  <p>Title</p><p><%= link_to book.title,book_path(book.id) %></p>
-  <p>Opinion：<%= book.opinion %></p>
-  
- <% end %>
-</div>
+<h1>Books</h1>
+<table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Opinion</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+   <% @books.each do |book| %>
+      <tbody>
+      <tr>
+      <td><%= link_to book.title,book_path(book.id) %></td>
+      <td><%= book.opinion %>
+      <% end %></td>
+      </tr>
+      </tbody>
+</table>
