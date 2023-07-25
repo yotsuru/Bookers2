@@ -2,15 +2,15 @@
   <%= flash[:notice] %>
 </div>
 
-<%= render 'books/userinfo' , user: @user %><!--ローカル変数が２つ-->
-<%= render 'books/booknew' , book: @book %>
+<%= render 'books/userinfo' ,book: @book, user: @user %><!--ローカル変数が２つ-->
+<%#= render 'books/booknew' , book: @book %>
 <!-- ユーザーの詳細 -->
 <div>
   <h3><%= @user.name %></h3>
   <%= image_tag @user.get_profile_image(100,100) %>
   <% if @user == current_user %>
-     <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
-     <%# a class="social" href="<i class="fa-solid fa-user-gear"></i>", edit_user_path(@user) %>
+     <%#= link_to "プロフィール編集", edit_user_path(@user) %>
+     <%= link_to edit_user_path(@user) do %><i class="fa-solid fa-user-gear"></i><% end %>
   <% end %>
 </div>
 
