@@ -1,3 +1,5 @@
+<div class="container">
+  <div class="row">
 <div>
   <%= flash[:notice] %>
 </div>
@@ -5,6 +7,7 @@
 <%= render 'books/userinfo' ,book: @book, user: @user %><!--ローカル変数が２つ-->
 <%#= render 'books/booknew' , book: @book %>
 
+<div class="col-md-9">
 <!-- ユーザーの投稿一覧 -->
 <h1>Books</h1>
 <table class="table table-striped">
@@ -23,4 +26,8 @@
       <% end %></td>
       </tr>
       </tbody>
-</table>
+    </table>
+
+  </div>
+ </div>
+</div>
