@@ -1,4 +1,3 @@
-<h1>Editing Book</h1>
 <% if @book.errors.any? %>
   <%= @book.errors.count %>error prohibited this obj from being saved:
   <ul>
@@ -8,15 +7,28 @@
   </ul>
 <% end %>
 
+<div class="container mt-5 pt-5">
+ <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+
+<h1>Editing Book</h1>
 <%= form_with model: @book do |f| %>
   
-  <h4>Title</h4>
-  <%= f.text_field :title %>
-  <h4>Opinion</h4>
-  <%= f.text_area :opinion %>
-  <%= f.submit 'Update Book' %>
+   <div class="mx-auto px-5 py-3"><h4>Title</h4>
+  <%= f.text_field :title %></div>
+  
+   <div class="mx-auto px-5 py-3"><h4>Opinion</h4>
+  <%= f.text_area :opinion %></div>
+  
+   <div class="mx-auto px-5 py-3"><%= f.submit 'Update Book' %></div>
 　<% end %>
 　
+  <div class="mx-auto px-5 py-5">
+  <div class="d-flex justify-content-around">
   <%= link_to "Show", book_path(@book) %>
-  <%= link_to "Back", books_path(@book) %>
- 
+  <%= link_to "Back", books_path(@book) %></div>
+  </div>
+  
+  </div>
+ </div>
+</div>
