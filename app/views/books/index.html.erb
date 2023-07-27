@@ -1,7 +1,16 @@
-<div class="container">
-   <div class="row">
-   
-<%= render 'userinfo' , book: @book,user: current_user %><!--ローカル変数が２つ-->
+ <div class="container">
+ <!-- バリデーション -->
+    <% if @book.errors.any? %>
+      <%= @book.errors.count %>error prohibited this obj from being saved:
+      <ul>
+      <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+      </ul>
+      <% end %>
+
+<div class="row">
+   <%= render 'userinfo' , book: @book,user: current_user %><!--ローカル変数が２つ-->
     
    <div class="col-md-8">
   <h1>Books</h1>
