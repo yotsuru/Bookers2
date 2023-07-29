@@ -24,29 +24,29 @@
           <ul class="navbar-nav">
            <% if user_signed_in? %>
             <li class="nav-item active">
-              <%= link_to 'Home', user_path(current_user.id),class: "nav-link" %>
+              <%= link_to 'Home', user_path(current_user.id),class: "nav-link fas fa-home" %>
             </li>
             <li class="nav-item active">
-              <%= link_to 'Users', users_path,class: "nav-link" %>
+              <%= link_to 'Users', users_path,class: "nav-link fa-solid fa-users" %>
             </li>
             <li class="nav-item active">
-              <%= link_to 'Books', books_path,class: "nav-link" %>
+              <%= link_to 'Books', books_path,class: "nav-link fa-solid fa-book-open" %>
             </li>
             <li class="nav-item active">
-              <%= link_to 'Log out', destroy_user_session_path, method: :delete,class: "nav-link" %>
+              <%= link_to 'Log out', destroy_user_session_path, method: :delete,class: "nav-link fas fa-sign-out-alt" %>
             </li>
            <% else %>
             <li class="nav-item active">
-              <%= link_to 'Home', root_path,class: "nav-link" %>
+              <%= link_to 'Home', root_path,class: "nav-link fas fa-home" %>
             </li>
             <li class="nav-item active">
-              <%= link_to 'About', about_path,class: "nav-link" %>
+              <%= link_to 'About', about_path,class: "nav-link fas fa-link" %>
             </li>
             <li class="nav-item active">
-              <%= link_to 'Sign up', new_user_registration_path,class: "nav-link" %>
+              <%= link_to 'Sign up', new_user_registration_path,class: "nav-link fas fa-user-plus" %>
             </li>
             <li class="nav-item active">
-              <%= link_to 'Log in', new_user_session_path,class: "nav-link" %>
+              <%= link_to 'Log in', new_user_session_path,class: "nav-link fas fa-sign-in-alt" %>
             </li>
             <% end %>
           </ul>
