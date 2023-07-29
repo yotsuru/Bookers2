@@ -2,17 +2,20 @@
 <div class="col-md-3">
 <!-- ユーザー情報 -->
   <h1>User info</h1>
-   <div>
+   
    <%= image_tag user.get_profile_image(100,100) %>
      <table class="table">
   　　<tr><th>name</th><th><%= user.name %></th></tr>
   　　<tr><th>introduction</th><th><%= user.introduction %></th></tr>
      </table>
+   <div class= "d-flex justify-content-center align-items-center ">
     <% if user == current_user %>
-    <%#= link_to "プロフィール編集", edit_user_path(@user) %>
-    <%= link_to edit_user_path(user) do %><i class="fa-solid fa-user-gear"></i><% end %>
+      <%= link_to edit_user_path(user) do %><i class="fa-solid fa-user-gear "></i><% end %>
+    <% else %>
+      <%= link_to user_path(current_user) do %><i class="fa-solid fa-user-gear "></i><% end %>
     <% end %>
-  </div>
+   </div>
+  
 
 <!-- 投稿フォーム -->
   <h1>New book</h1>
